@@ -12,22 +12,28 @@ Table of contents
 	- [Installation](#installation)
  - [Fedora](#fedora)
 	- [Prerequisites](#prerequisites-1)
+		- [AMD / Intel](#amd--intel)
 		- [Nvidia](#nvidia-1)
 	- [Installation](#installation-1)
  - [Gentoo / Funtoo / Other Gentoo derivatives](#gentoo--funtoo--other-gentoo-derivatives)
 	- [Prerequisites](#prerequisites-2)
 		- [AMD](#amd-1)
 		- [Intel](#intel-1)
-		- [Nvidia](#nvidia-1)
+		- [Nvidia](#nvidia-2)
 	- [Installation](#installation-2)
- - [openSUSE](#opensuse)
+ - [NixOS](#nixos)
 	- [Prerequisites](#prerequisites-3)
-	- [Installation](#installation-3)
- - [Ubuntu / Linux Mint / Other Ubuntu-based distributions](#ubuntu--linux-mint--other-ubuntu-based-distributions)
-	- [Prerequisites](#prerequisites-4)
 		- [AMD / Intel](#amd--intel-1)
-		- [Nvidia](#nvidia-1)
-	- [Installation](#Installation-4)
+		- [Nvidia](#nvidia-3)
+	- [Installation](#installation-3)
+ - [openSUSE](#opensuse)
+	- [Prerequisites](#prerequisites-4)
+	- [Installation](#installation-4)
+ - [Ubuntu / Linux Mint / Other Ubuntu-based distributions](#ubuntu--linux-mint--other-ubuntu-based-distributions)
+	- [Prerequisites](#prerequisites-5)
+		- [AMD / Intel](#amd--intel-2)
+		- [Nvidia](#nvidia-4)
+	- [Installation](#installation-5)
  - [External Sources](#external-sources)
 
 ## Requirements
@@ -92,6 +98,7 @@ To install Lutris, execute the following command as root:
 pacman -S lutris
 ```
 
+
 ## Fedora
 
 **Note: this is specifically for Fedora 31 on the x86_64 platform. The installation process may be different for different versions of Fedora and platform.**
@@ -129,6 +136,7 @@ To install Lutris. execute the following command as root:
 ```bash
 dnf install lutris
 ```
+
 
 ## Gentoo / Funtoo / Other Gentoo derivatives
 
@@ -171,6 +179,68 @@ To install Lutris, execute the following command as root:
 ```bash
 emerge --ask --verbose games-util/lutris
 ```
+
+
+## NixOS
+
+### Prerequisites
+
+#### AMD / Intel
+
+To install support for the Vulkan API, your `*.nix` (e.g. `configuration.nix`) must have the following as **system packages**:
+
+- `pkgs.vulkan-headers`;
+- `pkgs.vulkan-loader`;
+- `pkgs.vulkan-tools`;
+- `pkgs.vulkan-validation-layers`.
+
+Your `*.nix` file will look similar to this: 
+
+```nix
+environment.systemPackages = [ pkgs.vulkan-headers pkgs.vulkan-loader pkgs.vulkan-tools pkgs.vulkan-validation-layers ];
+```
+
+Then, execute the following command as root:
+
+```bash
+nixos-rebuild switch
+```
+
+#### Nvidia
+
+To install support for the Vulkan API, you will have to install the **proprietary** drivers.
+
+To install them, you will have to refer to the [NixOS wiki](https://nixos.wiki/wiki/Nvidia).
+
+Then, your `*.nix` (e.g. `configuration.nix`) must have the following as **system packages**:
+
+- `pkgs.vulkan-headers`;
+- `pkgs.vulkan-loader`;
+- `pkgs.vulkan-tools`;
+- `pkgs.vulkan-validation-layers`.
+
+At last, execute the following command as root:
+
+```bash
+nixos-rebuild switch
+```
+
+### Installation
+
+To install Lutris, your `*.nix` (e.g. `configuration.nix`) must have Lutris (`pkgs.lutris-unwrapped`) as a **system package**
+
+Your `*.nix` file will look similar to this:
+
+```nix
+environment.systemPackages = [ pkgs.lutris-unwrapped ];
+```
+
+Then, execute the following command as root:
+
+```bash
+nixos-rebuild switch
+```
+
 
 ## openSUSE
 
