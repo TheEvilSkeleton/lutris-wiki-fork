@@ -12,6 +12,7 @@ Table of contents
 	- [Installation](#installation)
  - [Fedora](#fedora)
 	- [Prerequisites](#prerequisites-1)
+		- [Nvidia](#nvidia-1)
 	- [Installation](#installation-1)
  - [Gentoo / Funtoo / Other Gentoo derivatives](#gentoo--funtoo--other-gentoo-derivatives)
 	- [Prerequisites](#prerequisites-2)
@@ -93,12 +94,33 @@ pacman -S lutris
 
 ## Fedora
 
+**Note: this is specifically for Fedora 31 on the x86_64 platform. The installation process may be different for different versions of Fedora and platform.**
+
+### Prerequisites
+
+### AMD / Intel
+
 To install support for the Vulkan API, execute the following command as root:
 
 ```bash
-dnf install vulkan-loader vulkan-loader.i686
+dnf install vulkan-tools.x86_64 mesa-vulkan-drivers.x86_64 vulkan-loader.x86_64 vulkan-validation-layers.x86_64
 ```
-### Prerequisites
+
+#### Nvidia
+
+To install support for the Vulkan API, you must follow these steps:
+
+- enable the [RPM Fusion repository as well as its nonfree repository](https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/);
+- [determine your GPU's model](https://rpmfusion.org/Howto/NVIDIA#Determining_your_card_model);
+- [install the drivers for the appropriate model](https://rpmfusion.org/Howto/NVIDIA#Installing_the_drivers).
+
+To install support for the Vulkan API, execute the following command as root:
+
+```bash
+dnf install vulkan-tools.x86_64 mesa-vulkan-drivers.x86_64 vulkan-loader.x86_64 vulkan-validation-layers.x86_64
+```
+
+**(Optional): during this installation, `DNF` will ask if the GPG fingerprint is correct.  You can check if it is correct in [RPM Fusion's page](https://rpmfusion.org/keys) to make sure that the fingerprint you check matches your version of Fedora.**
 
 ### Installation
 
