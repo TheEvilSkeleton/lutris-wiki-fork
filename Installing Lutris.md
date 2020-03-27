@@ -104,7 +104,8 @@ dnf install vulkan-loader vulkan-loader.i686
 #### Nvidia
 
 If you are using a Nvidia GPU, you will probably first want to install non-free drivers.  To do this you will first have to enable [RPM Fusion repos](https://rpmfusion.org/RPM%20Fusion).
-RPM Fusion has RPM downloads for the repos and instructions on installing [here](https://rpmfusion.org/Configuration)
+RPM Fusion has RPM downloads for the repos and instructions on installing [here](https://rpmfusion.org/Configuration).
+
 As they show in their instructions if you want to install the repos in one command you use this (note that this is for normal Fedora not silverblue if you need instructions for silverblue visist the page):
 
 ```bash
@@ -112,7 +113,9 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 ```
 
 Follow the prompts `dnf` gives you and you should have the repos.  Now you are ready to install Nvidia drivers!
+
 In RPM Fusion's [wiki page for nvidia](https://rpmfusion.org/Howto/NVIDIA#Current_GeForce.2FQuadro.2FTesla) they show the commands to install the drivers for different nvidia devices.
+
 These are the install commands if you have a curent card:
 
 ```bash
@@ -122,6 +125,7 @@ sudo dnf install xorg-x11-drv-nvidia-cuda #optional for cuda/nvdec/nvenc support
 ```
 
 Note that during this installation process `dnf` should ask you if the gpg fingerprint is correct.  You can check if it is correct with [here](https://rpmfusion.org/keys), make sure that the fingerprint you check with matches you version of Fedora.
+
 Now you should have Nvidia drivers! Note you may need to reboot for them to work.
 
 ### Installation
