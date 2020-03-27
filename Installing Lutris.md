@@ -98,7 +98,7 @@ pacman -S lutris
 
 ### Prerequisites
 
-### AMD / Intel
+#### AMD / Intel
 
 To install support for the Vulkan API, execute the following command as root:
 
