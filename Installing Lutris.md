@@ -12,6 +12,7 @@ Table of contents
 	- [Installation](#installation)
  - [Fedora](#fedora)
 	- [Prerequisites](#prerequisites-1)
+		- [Nvidia](#nvidia-1)
 	- [Installation](#installation-1)
  - [Gentoo / Funtoo / Other Gentoo derivatives](#gentoo--funtoo--other-gentoo-derivatives)
 	- [Prerequisites](#prerequisites-2)
@@ -104,7 +105,7 @@ dnf install vulkan-loader vulkan-loader.i686
 
 If you are using a Nvidia GPU, you will probably first want to install non-free drivers.  To do this you will first have to enable [RPM Fusion repos](https://rpmfusion.org/RPM%20Fusion).
 RPM Fusion has RPM downloads for the repos and instructions on installing [here](https://rpmfusion.org/Configuration)
-As they show in their instructions if you want to install the repos in one command you use this (not that this is for normal Fedora not silverblue if you need instructions for silverblue visist the page):
+As they show in their instructions if you want to install the repos in one command you use this (note that this is for normal Fedora not silverblue if you need instructions for silverblue visist the page):
 
 ```bash
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
