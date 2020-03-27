@@ -96,8 +96,11 @@ To install support for the Vulkan API  (will be functional only if you have a [V
 ### Prerequisites
 
 ### Installation
+To install Lutris, execute the following command:
 
-
+```
+sudo dnf install lutris
+```
 ## Gentoo / Funtoo / Other Gentoo derivatives
 
 ### Prerequisites
