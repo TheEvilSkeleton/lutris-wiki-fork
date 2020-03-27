@@ -5,12 +5,12 @@ Table of contents
 - [Requirements](#requirements)
  - [Arch / Manjaro / Other Arch derivatives](#arch--manjaro--other-arch-derivatives)
 	- [Prerequisites](#prerequisites)
-		- [Multilib](#multilib)
+		- [Multilib (Manjaro excluded)](#multilib-manjaro-excluded)
 		- [AMD](#amd)
 		- [Intel](#intel)
 		- [Nvidia](#nvidia)
 	- [Installation](#installation)
- - [Fedora](#fedora-incomplete-guide)
+ - [Fedora](#fedora)
 	- [Prerequisites](#prerequisites-1)
 	- [Installation](#installation-1)
  - [Gentoo / Funtoo / Other Gentoo derivatives](#gentoo--funtoo--other-gentoo-derivatives)
@@ -27,20 +27,22 @@ Table of contents
 		- [AMD / Intel](#amd--intel-1)
 		- [Nvidia](#nvidia-1)
 	- [Installation](#Installation-4)
+ - [External Sources](#external-sources)
 
 ## Requirements
 
-**Before reading through the page, you _must_ ensure that your GPU is capable of running in Vulkan.**
+**Before reading through the page, you must ensure that your [GPU is capable of running in Vulkan.](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility)**
+
 
 ## Arch / Manjaro / Other Arch derivatives:
 
 ### Prerequisites
 
-#### Multilib
+#### Multilib (Manjaro excluded)
 
 First, enable multilib.
 
-To enable multilib repository, uncomment the `[multilib]` section in `/etc/pacman.conf`
+To enable multilib repository, uncomment the `[multilib]` section in `/etc/pacman.conf`. This process does not require for Manjaro users as it is enabled by default.
 
 ```
 /etc/pacman.conf
@@ -49,58 +51,63 @@ To enable multilib repository, uncomment the `[multilib]` section in `/etc/pacma
 Include = /etc/pacman.d/mirrorlist
 ```
 
-Then, upgrade the system by executing:
+Then, upgrade the system by executing the following command as root:
 
-```
-sudo pacman -Syu
+```bash
+pacman -Syu
 ```
 
 #### AMD
 
 
-To install support for the Vulkan API  (will be functional only if you have a [Vulkan capable GPU](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility)) and 32-bit games, execute:
+To install support for the Vulkan API, execute the following command as root:
 
-	sudo pacman -S lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+```bash
+pacman -S lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+```
 
 #### Intel
 
-To install support for the Vulkan API  (will be functional only if you have a [Vulkan capable GPU](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility)) and 32-bit games, execute:
+To install support for the Vulkan API, execute the following command as root:
 
-	sudo pacman -S lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
-
-_Note: Only Skylake, Kaby Lake, and Coffee Lake offer full Vulkan support. Broadwell, Haswell and Ivy Bridge only offer partial support, which may not work with a lot of games. Sandy Bridge and older lack any Vulkan support whatsoever._
+```bash
+pacman -S lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
+```
 
 #### Nvidia:
 
-_**Warning**: Please ensure your graphics card is supported by modern Nvidia driver before installing._
-_For a list of supported GPUs click here: https://www.nvidia.com/Download/driverResults.aspx/149138/en-us_
+To install support for the Vulkan API, you must install the **proprietary** drivers.
 
-Proprietary driver and support for Vulkan are required for proper functionality of games.
+To install them, execute the following command as root:
 
-To install it, execute following command:
-
-	sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
-
+```bash
+pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+```
 ### Installation
 
-To install Lutris, execute the following command:
+To install Lutris, execute the following command as root:
 
-	sudo pacman -S lutris
+```bash
+pacman -S lutris
+```
 
-## Fedora (Incomplete Guide)
+## Fedora
 
-To install support for the Vulkan API  (will be functional only if you have a [Vulkan capable GPU](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility)) and 32-bit games, execute:
+To install support for the Vulkan API, execute the following command as root:
 
-	sudo dnf install vulkan-loader vulkan-loader.i686
-
+```bash
+dnf install vulkan-loader vulkan-loader.i686
+```
 ### Prerequisites
 
 ### Installation
-To install Lutris, execute the following command:
 
+To install Lutris. execute the following command as root:
+
+```bash
+dnf install lutris
 ```
-sudo dnf install lutris
-```
+
 ## Gentoo / Funtoo / Other Gentoo derivatives
 
 ### Prerequisites
@@ -109,31 +116,39 @@ sudo dnf install lutris
 
 If you are using an AMD GPU, you will have to read through the [AMD GPU Gentoo wiki](https://wiki.gentoo.org/wiki/Amdgpu) page before proceeding.
 
-Then, to install support for the Vulkan API (will be functional only if you have a [Vulkan capable GPU](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility) and driver), execute:
+Then, to install support for the Vulkan API, execute the following command as root:
 
-	sudo emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-layers media-libs/vulkan-loader
+```bash
+emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-layers media-libs/vulkan-loader
+```
 
 #### Intel
 
 If you are using an Intel iGPU, you will have to read through the [Intel Gentoo wiki](https://wiki.gentoo.org/wiki/Intel) page before proceeding.
 
-Then, to install support for the Vulkan API (will be functional only if you have a [Vulkan capable GPU](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility) and driver), execute:
+Then, to install support for the Vulkan API, execute the following command as root:
 
-	sudo emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-layers media-libs/vulkan-loader
+```bash
+emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-layers media-libs/vulkan-loader
+```
 
 #### Nvidia
 
 If you are using an Nvidia GPU, you will have to read through the [Nvidia-drivers Gentoo wiki](https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers) page before proceeding.
 
-Then, to install support for the Vulkan API (will be functional only if you have a [Vulkan capable GPU](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility) and driver), execute:
+Then, to install support for the Vulkan API, execute the following command as root:
 
-	sudo emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-loader
+```bash
+emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-loader
+```
 
 ### Installation
 
-To install Lutris, execute:
+To install Lutris, execute the following command as root:
 
-	sudo emerge --ask --verbose games-util/lutris
+```bash
+emerge --ask --verbose games-util/lutris
+```
 
 ## openSUSE
 
@@ -149,15 +164,21 @@ To install Lutris, execute:
 **If you have Ubuntu 19.10 or newer:**
 Enable 32 bit architecture (if you haven't already):
 
-	sudo dpkg --add-architecture i386 
+```bash
+dpkg --add-architecture i386 
+```
 
 Install support for 32-bit games:
 
-	sudo apt install libgl1-mesa-dri:i386
+```bash
+apt install libgl1-mesa-dri:i386
+```
 
-To install support for the Vulkan API  (will be functional only if you have a [Vulkan capable GPU](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility)) and 32-bit games, execute:
+To install support for the Vulkan API, execute the following command as root:
 
-	sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
+```bash
+apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
+```
 
 Reboot to apply changes.
 
@@ -165,26 +186,33 @@ Reboot to apply changes.
 
 To get the latest Nvidia drivers it is necessary to add the [Proprietary GPU Drivers PPA](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa):
 
-	sudo add-apt-repository ppa:graphics-drivers/ppa
+```bash
+add-apt-repository ppa:graphics-drivers/ppa
+```
 
 Enable 32 bit architecture (if you haven't already):
 
-	sudo dpkg --add-architecture i386 
+```bash
+dpkg --add-architecture i386 
+```
 
 Update to refresh packages:
 
-	sudo apt update
-
-_**Warning**: Please ensure your graphics card is supported by the 430 driver before installing._
-_For a list of supported GPUs click here: https://www.nvidia.com/Download/driverResults.aspx/149138/en-us_
+```bash
+apt update
+```
 
 Install the 430.40 driver:
 
-	sudo apt install nvidia-driver-430 libnvidia-gl-430 libnvidia-gl-430:i386
+```bash
+apt install nvidia-driver-430 libnvidia-gl-430 libnvidia-gl-430:i386
+```
 
-To install support for the Vulkan API  (will be functional only if you have a [Vulkan capable GPU](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility)) and 32-bit games, execute:
+To install support for the Vulkan API, execute the following command as root:
 
-	sudo apt install libvulkan1 libvulkan1:i386
+```bash
+apt install libvulkan1 libvulkan1:i386
+```
 
 Reboot to apply changes.
 
@@ -193,27 +221,43 @@ Reboot to apply changes.
 
 Add [kisak-mesa PPA](https://launchpad.net/~kisak/+archive/ubuntu/kisak-mesa): 
 
-	sudo add-apt-repository ppa:kisak/kisak-mesa
+```bash
+add-apt-repository ppa:kisak/kisak-mesa
+```
 
 Enable 32 bit architecture (if you haven't already):
 
-	sudo dpkg --add-architecture i386 
+```bash
+dpkg --add-architecture i386 
+```
 
 Upgrade your system:
 
-	sudo apt update && sudo apt upgrade
+```bash
+apt update && apt upgrade
+```
 
 Install support for 32-bit games:
 
-	sudo apt install libgl1-mesa-glx:i386 libgl1-mesa-dri:i386
+```bash
+apt install libgl1-mesa-glx:i386 libgl1-mesa-dri:i386
+```
 
-To install support for the Vulkan API  (will be functional only if you have a [Vulkan capable GPU](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility)) and 32-bit games, execute:
+To install support for the Vulkan API, execute the following command as root:
 
-	sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
-
+```bash
+apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
+```
 
 Reboot to apply changes.
 
 _Note: Only Ubuntu 18.04 and higher is supported for AMD and Intel graphics._
 
 _Note for Intel integrated graphics users: Only Skylake, Kaby Lake, and Coffee Lake offer full Vulkan support. Broadwell, Haswell and Ivy Bridge only offer partial support, which may not work with a lot of games. Sandy Bridge and older lack any Vulkan support whatsoever._
+
+
+## External Sources
+
+[Wikipedia / Lutris](https://en.wikipedia.org/wiki/Lutris)
+
+[Gentoo wiki / Lutris](https://wiki.gentoo.org/wiki/Lutris)
