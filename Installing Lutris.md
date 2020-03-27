@@ -219,6 +219,10 @@ Then, your `*.nix` (e.g. `configuration.nix`) must have the following as **syste
 - `pkgs.vulkan-tools`;
 - `pkgs.vulkan-validation-layers`.
 
+```nix
+environment.systemPackages = [ pkgs.vulkan-headers pkgs.vulkan-loader pkgs.vulkan-tools pkgs.vulkan-validation-layers ];
+```
+
 At last, execute the following command as root:
 
 ```bash
