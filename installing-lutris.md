@@ -1,5 +1,9 @@
 # Installing Lutris
 
+This is a guide on how to install the Vulkan drivers and tools, and Lutris for most mainstream GNU/Linux distributions.
+
+**Warning: this page is not 100% accurate, as we do not have all the knowledge for each and every distribution, so we are open in fixing every bits of issues you may encounter.**
+
 Table of contents
 =============
 - [Requirements](#requirements)
@@ -40,6 +44,7 @@ Table of contents
 
 **Before reading through the page, you must ensure that your [GPU is capable of running in Vulkan.](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility)**
 
+For more information about Vulkan, you can look at the [awesome-vulkan](https://github.com/vinjn/awesome-vulkan) project.
 
 ## Arch / Manjaro / Other Arch derivatives:
 
