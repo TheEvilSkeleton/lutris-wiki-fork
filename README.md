@@ -8,6 +8,10 @@ Revamped wiki from Lutris to make it easier for newcomers and add more instructi
 
 [awesome-gnu-linux-gaming.md](/awesome-gnu-linux-gaming.md) is a complete revamped version of [Performance Tweaks](https://github.com/lutris/lutris/wiki/Performance-Tweaks) from the [Lutris wiki](https://github.com/lutris/lutris/wiki).
 
+## Future plans
+
+[TODO.md](/TODO.md) is where we will put everything we will add in the future.
+
 ## Chat
 
 To check our chat, press [here](https://github.com/lutris/guides/issues/3).
