@@ -1,6 +1,6 @@
 # Lutris wiki fork
 
-Revamped wiki from Lutris to make it easier for newcomers and add more instructions for more distributions.
+Revamped wiki from Lutris to make it easier for newcomers to game on Linux, because the Lutris wiki is poorly written.
 
 ## Revamps
 
