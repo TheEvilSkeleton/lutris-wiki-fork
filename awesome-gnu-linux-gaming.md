@@ -4,4 +4,4 @@ A curated list of awesome GNU/Linux games, tools, and resources. Inspired by [aw
 
 ## Future plans
 
-Everything we plan to add in the future in this page will be in [TODO.md](/TODO.md).
+Everything we plan to add in the future in this page will be in [TODO.md](/TODO.md#awesome-gnu-linux-gamingmd).
