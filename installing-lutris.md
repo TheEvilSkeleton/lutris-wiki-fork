@@ -55,16 +55,7 @@ For more information about Vulkan, you can look at the [awesome-vulkan](https://
 
 #### Multilib (Manjaro excluded)
 
-First, enable multilib.
-
-To enable multilib repository, uncomment the `[multilib]` section in `/etc/pacman.conf`. This process does not require for Manjaro users as it is enabled by default.
-
-```
-/etc/pacman.conf
--------------------------------------------------------------------------------------
-[multilib]
-Include = /etc/pacman.d/mirrorlist
-```
+To enable the `[multilib]` repository, you will have to refer to the [Arch wiki](https://wiki.archlinux.org/index.php/Official_repositories#Enabling_multilib).
 
 Then, upgrade the system by executing the following command as root:
 
@@ -149,7 +140,7 @@ To install support for the Vulkan API and its tools, execute the following comma
 dnf install vulkan-tools mesa-vulkan-drivers vulkan-loader vulkan-validation-layers
 ```
 
-**(Optional): during this installation, `DNF` will ask if the GPG fingerprint is correct.  You can check if it is correct in [RPM Fusion's page](https://rpmfusion.org/keys) to make sure that the fingerprint you check matches your version of Fedora.**
+**(Optional): during this installation, `DNF` will ask if the GPG fingerprint is correct. You can check if it is correct in [RPM Fusion's page](https://rpmfusion.org/keys) to make sure that the fingerprint you check matches your version of Fedora.**
 
 Then, proceed to the [installation](#installation-1).
 
