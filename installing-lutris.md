@@ -419,6 +419,39 @@ _Note: Only Ubuntu 18.04 and higher is supported for AMD and Intel graphics._
 _Note for Intel integrated graphics users: Only Skylake, Kaby Lake, and Coffee Lake offer full Vulkan support. Broadwell, Haswell and Ivy Bridge only offer partial support, which may not work with a lot of games. Sandy Bridge and older lack any Vulkan support whatsoever._
 
 
+## Void
+
+### Requirements
+
+#### AMD
+
+To install support for the Vulkan API and its tools, execute the following command as root:
+
+```bash
+xbps-install -S mesa-vulkan-radeon Vulkan-Tools Vulkan-Headers Vulkan-ValidationLayers vulkan-loader
+```
+
+#### Intel
+
+To install support for the Vulkan API and its tools, you will have to refer to the [Void Linux documentation](https://docs.voidlinux.org/config/graphics/intel.html?highlight=vulkan#intel-gpu).
+
+Then, to install the Vulkan tools, execute the following commands as root:
+
+```bash
+xbps-install -S Vulkan-Headers Vulkan-ValidationLayers
+```
+
+#### Nvidia
+
+### Installation
+
+To install Lutris, execute the following command as root:
+
+```bash
+xbps-install -S lutris
+```
+
+
 ## External Sources
 
 [Wikipedia / Lutris](https://en.wikipedia.org/wiki/Lutris)
