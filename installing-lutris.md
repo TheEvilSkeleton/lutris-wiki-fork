@@ -55,7 +55,7 @@ For more information about Vulkan, you can look at the [awesome-vulkan](https://
 
 #### Multilib (Manjaro excluded)
 
-To enable the `[multilib]` repository, you will have to refer to the [Arch wiki](https://wiki.archlinux.org/index.php/Official_repositories#Enabling_multilib).
+To enable the `[multilib]` repository, you will have to refer to the [Arch wiki](https://wiki.archlinux.org/index.php/Official_repositories#Enabling_multilib). This process does to require for Manjaro users as it is already enabled by default.
 
 Then, upgrade the system by executing the following command as root:
 
