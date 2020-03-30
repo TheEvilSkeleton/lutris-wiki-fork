@@ -72,6 +72,12 @@ Then, upgrade the system by executing the following command as root:
 pacman -Syu
 ```
 
+Then, choose your GPU's manufacturer:
+
+- [AMD](#amd)
+- [Intel](#intel)
+- [Nvidia](#nvidia)
+
 #### AMD
 
 To install support for the Vulkan API and its tools, execute the following command as root:
@@ -80,6 +86,8 @@ To install support for the Vulkan API and its tools, execute the following comma
 pacman -S lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
 ```
 
+Then, proceed to the [installation](#installation).
+
 #### Intel
 
 To install support for the Vulkan API and its tools, execute the following command as root:
@@ -87,6 +95,8 @@ To install support for the Vulkan API and its tools, execute the following comma
 ```bash
 pacman -S lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
 ```
+
+Then, proceed to the [installation](#installation).
 
 #### Nvidia:
 
@@ -97,6 +107,9 @@ To install them, execute the following command as root:
 ```bash
 pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
 ```
+
+Then, proceed to the [installation](#installation).
+
 ### Installation
 
 To install Lutris, execute the following command as root:
@@ -120,6 +133,8 @@ To install support for the Vulkan API and its tools, execute the following comma
 dnf install vulkan-tools mesa-vulkan-drivers vulkan-loader vulkan-validation-layers
 ```
 
+Then, proceed to the [installation](#installation-1).
+
 #### Nvidia
 
 To install support for the Vulkan API and its tools, execute the following command as root:
@@ -135,6 +150,8 @@ dnf install vulkan-tools mesa-vulkan-drivers vulkan-loader vulkan-validation-lay
 ```
 
 **(Optional): during this installation, `DNF` will ask if the GPG fingerprint is correct.  You can check if it is correct in [RPM Fusion's page](https://rpmfusion.org/keys) to make sure that the fingerprint you check matches your version of Fedora.**
+
+Then, proceed to the [installation](#installation-1).
 
 ### Installation
 
@@ -159,6 +176,8 @@ Then, to install support for the Vulkan API and its tools, execute the following
 emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-layers media-libs/vulkan-loader
 ```
 
+Then proceed to the [installation](#installation-2).
+
 #### Intel
 
 If you are using an Intel iGPU, you will have to read through the [Intel Gentoo wiki](https://wiki.gentoo.org/wiki/Intel) page before proceeding.
@@ -169,6 +188,8 @@ Then, to install support for the Vulkan API and its tools, execute the following
 emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-layers media-libs/vulkan-loader
 ```
 
+Then proceed to the [installation](#installation-2).
+
 #### Nvidia
 
 If you are using an Nvidia GPU, you will have to read through the [Nvidia-drivers Gentoo wiki](https://wiki.gentoo.org/wiki/NVIDIA/nvidia-drivers) page before proceeding.
@@ -178,6 +199,8 @@ Then, to install support for the Vulkan API and its tools, execute the following
 ```bash
 emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-loader
 ```
+
+Then proceed to the [installation](#installation-2).
 
 ### Installation
 
@@ -213,6 +236,8 @@ Then, execute the following command as root:
 nixos-rebuild switch
 ```
 
+Then proceed to the [installation](#installation-3).
+
 #### Nvidia
 
 To install support for the Vulkan API and its tools, you will have to install the **proprietary** drivers.
@@ -235,6 +260,8 @@ At last, execute the following command as root:
 ```bash
 nixos-rebuild switch
 ```
+
+Then, proceed to the [installation](#installation-3).
 
 ### Installation
 
@@ -267,6 +294,8 @@ To install support for the Vulkan API and its tools, execute the following comma
 zypper install libvulkan_radeon libvulkan_radeon-32bit vulkan-tools vulkan-loader vulkan-headers vulkan-validationlayers
 ```
 
+Then, proceed to the [installation](#installation-4).
+
 #### Intel
 
 To install support for the Vulkan API and its tools, execute the following command as root:
@@ -274,6 +303,8 @@ To install support for the Vulkan API and its tools, execute the following comma
 ```bash
 zypper install libvulkan_intel libvulkan_intel-32bit vulkan-tools vulkan-loader vulkan-headers vulkan-validationlayers
 ```
+
+Then, proceed to the [installation](#installation-4).
 
 #### Nvidia
 
@@ -286,6 +317,8 @@ Then, to install support for the Vulkan API and its tools, execute the following
 ```bash
 zypper install vulkan-tools vulkan-loader vulkan-headers vulkan-validationlayers
 ```
+
+Then, proceed to the [installation](#installation-4).
 
 ### Installation
 
