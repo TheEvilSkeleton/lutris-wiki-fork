@@ -22,5 +22,7 @@ This is a list of what we are planning on adding in the future. If something is 
 
 - Add [Alpine](https://alpinelinux.org/)
 - Add [Debian](https://www.debian.org/)
-- Modernise [*buntu](https://ubuntu.com/download/flavours)
+- Update [*buntu](https://ubuntu.com/download/flavours)
 - Add [Void](https://voidlinux.org/)
+- Add Others
+	- Add [Flatpak](https://flatpak.org/)
