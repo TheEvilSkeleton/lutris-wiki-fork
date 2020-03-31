@@ -21,8 +21,13 @@ This is a list of what we are planning on adding in the future. If something is 
 ## [installing-lutris.md](/installing-lutris.md)
 
 - Add [Alpine](https://alpinelinux.org/)
+- ~~Add [Arch](https://www.archlinux.org/)~~
 - Add [Debian](https://www.debian.org/)
+- ~~Add [Fedora](https://getfedora.org/)~~
+- ~~Add [Gentoo](https://www.gentoo.org/)~~
+- ~~Add [NixOS](https://nixos.org/)~~
+- ~~Add [openSUSE](https://software.opensuse.org/)~~
 - Update [*buntu](https://ubuntu.com/download/flavours)
-- Add [Void](https://voidlinux.org/)
+- ~~Add [Void](https://voidlinux.org/)~~
 - Add Others
-	- Add [Flatpak](https://flatpak.org/)
+	- ~~Add [Flatpak](https://flatpak.org/)~~
