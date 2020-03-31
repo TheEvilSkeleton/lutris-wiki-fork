@@ -6,7 +6,7 @@ This is a guide on how to install the Vulkan drivers and tools, and Lutris for m
 
 Table of contents
 =============
-- [Requirements](#requirements)
+- [**Requirements**](#requirements) **IMPORTANT!**
  - [Arch / Manjaro / Other Arch derivatives](#arch--manjaro--other-arch-derivatives)
 	- [Prerequisites](#prerequisites)
 		- [Multilib (Manjaro excluded)](#multilib-manjaro-excluded)
@@ -41,9 +41,20 @@ Table of contents
 		- [AMD / Intel](#amd--intel-2)
 		- [Nvidia](#nvidia-5)
 	- [Installation](#installation-5)
+ - [Void](#void)
+	- [Prerequisites](#prerequisites-6)
+		- [AMD](#amd-3)
+		- [Intel](#intel-3)
+		- [Nvidia](#nvidia-6)
+	- [Installation](#installation-6)
+ - [Others](#others)
+	- [Flatpak](#flatpak)
+		- [Prerequisites](#prerequisites-7)
+			- [Flatpak](#flatpak-1)
+		- [Installation](#installation-7)
  - [External Sources](#external-sources)
 
-## Requirements
+## **Requirements**
 
 **Before reading through the page, you must ensure that your [GPU is capable of running in Vulkan.](https://en.wikipedia.org/wiki/Vulkan_(API)#Compatibility)**
 
@@ -322,7 +333,9 @@ zypper install lutris
 
 ## Ubuntu / Linux Mint / Other Ubuntu-based distributions:
 
-### AMD / Intel:
+### Prerequisites
+
+#### AMD / Intel
 
 **If you have Ubuntu 19.10 or newer:**
 Enable 32 bit architecture (if you haven't already):
@@ -345,7 +358,7 @@ apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
 
 Reboot to apply changes.
 
-### Nvidia:
+#### Nvidia:
 
 To get the latest Nvidia drivers it is necessary to add the [Proprietary GPU Drivers PPA](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa):
 
@@ -406,6 +419,8 @@ Install support for 32-bit games:
 apt install libgl1-mesa-glx:i386 libgl1-mesa-dri:i386
 ```
 
+### Installation
+
 To install support for the Vulkan API and its tools, execute the following command as root:
 
 ```bash
@@ -419,9 +434,10 @@ _Note: Only Ubuntu 18.04 and higher is supported for AMD and Intel graphics._
 _Note for Intel integrated graphics users: Only Skylake, Kaby Lake, and Coffee Lake offer full Vulkan support. Broadwell, Haswell and Ivy Bridge only offer partial support, which may not work with a lot of games. Sandy Bridge and older lack any Vulkan support whatsoever._
 
 
+
 ## Void
 
-### Requirements
+### Prerequisites
 
 #### AMD
 
@@ -430,6 +446,8 @@ To install support for the Vulkan API and its tools, execute the following comma
 ```bash
 xbps-install -S mesa-vulkan-radeon Vulkan-Tools Vulkan-Headers Vulkan-ValidationLayers vulkan-loader
 ```
+
+Then, proceed to the [installation](#installation-6).
 
 #### Intel
 
@@ -441,7 +459,19 @@ Then, to install the Vulkan tools, execute the following commands as root:
 xbps-install -S Vulkan-Headers Vulkan-ValidationLayers
 ```
 
+Then, proceed to the [installation](#installation-6).
+
 #### Nvidia
+
+To install support for the Vulkan API and its tools, you will have to refer to the [Void Linux wiki](https://wiki.voidlinux.org/Proprietary_Video_Drivers).
+
+Then, to install the Vulkan tools, execute the following commands as root:
+
+```bash
+xbps-install -S Vulkan-Headers Vulkan-ValidationLayers
+```
+
+Then, proceed to the [installation](#installation-6).
 
 ### Installation
 
@@ -451,6 +481,24 @@ To install Lutris, execute the following command as root:
 xbps-install -S lutris
 ```
 
+
+## Others
+
+### Flatpak
+
+**Warning: this version of Lutris is _unofficial_, you might encounter issues.**
+
+#### Prerequisites
+
+##### Flatpak
+
+Flatpak requires to be installed in your distribution, and the Lutris Flatpak requires an external Flatpak repository called FlatHub.
+
+To install Flatpak and enable the FlatHub repository, you will have to refer to the [FlatHub page](https://flatpak.org/setup/).
+
+#### Installation
+
+To install Lutris as Flatpak, you will have to refer the [`flathub / net.lutris.Lutris`](https://github.com/flathub/net.lutris.Lutris/blob/beta/README.md) GitHub repository.
 
 ## External Sources
 
