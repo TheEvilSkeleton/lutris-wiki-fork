@@ -60,7 +60,7 @@ Table of contents
 
 For more information about Vulkan, you can look at the [awesome-vulkan](https://github.com/vinjn/awesome-vulkan) project.
 
-## Arch / Manjaro / Other Arch derivatives:
+## Arch / Manjaro / Other Arch derivatives
 
 ### Prerequisites
 
@@ -331,7 +331,7 @@ zypper install lutris
 ```
 
 
-## Ubuntu / Linux Mint / Other Ubuntu-based distributions:
+## Ubuntu / Linux Mint / Other Ubuntu-based distributions
 
 ### Prerequisites
 
