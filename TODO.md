@@ -22,12 +22,19 @@ This is a list of what we are planning on adding in the future. If something is 
 
 - Add [Alpine](https://alpinelinux.org/)
 - ~~Add [Arch](https://www.archlinux.org/)~~
+- Add [CentOS](https://www.centos.org/)
+- Add [Clear](https://clearlinux.org/)
 - Add [Debian](https://www.debian.org/)
 - ~~Add [Fedora](https://getfedora.org/)~~
 - ~~Add [Gentoo](https://www.gentoo.org/)~~
+- Add [Mageia](https://www.mageia.org/en/)
 - ~~Add [NixOS](https://nixos.org/)~~
 - ~~Add [openSUSE](https://software.opensuse.org/)~~
+- Add [Slackware](http://www.slackware.com/)
+- Add [Solus](https://getsol.us/home/)
 - Update [*buntu](https://ubuntu.com/download/flavours)
 - ~~Add [Void](https://voidlinux.org/)~~
 - Add Others
 	- ~~Add [Flatpak](https://flatpak.org/)~~
+	- Add [Tarball](https://lutris.net/releases/)
+	- Add [Source](https://github.com/lutris/lutris)
