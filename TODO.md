@@ -22,7 +22,8 @@ This is a list of what we are planning on adding in the future. If something is 
 
 ## [installing-lutris.md](/installing-lutris.md)
 
-- Add [Alpine](https://alpinelinux.org/)
+- ~~Add [Alpine](https://alpinelinux.org/)~~
+	- Update [Alpine](https://alpinelinux.org)
 - ~~Add [Arch](https://www.archlinux.org/)~~
 - Add [CentOS](https://www.centos.org/)
 - Add [Clear](https://clearlinux.org/)
@@ -34,7 +35,7 @@ This is a list of what we are planning on adding in the future. If something is 
 - ~~Add [openSUSE](https://software.opensuse.org/)~~
 - Add [Slackware](http://www.slackware.com/)
 - Add [Solus](https://getsol.us/home/)
-- Update [*buntu](https://ubuntu.com/download/flavours)
+- Revamp [*buntu](https://ubuntu.com/download/flavours)
 - ~~Add [Void](https://voidlinux.org/)~~
 - Add Others
 	- ~~Add [Flatpak](https://flatpak.org/)~~
