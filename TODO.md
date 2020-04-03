@@ -17,6 +17,8 @@ This is a list of what we are planning on adding in the future. If something is 
 	- [CK patchsets](http://ck.kolivas.org/)
 	- [ZEN/Liquorix patchsets](https://github.com/zen-kernel/zen-kernel)
 	- [Post Factum patchsets](https://gitlab.com/post-factum/pf-kernel)
+- Add references
+	- https://www.icculus.org/lgfaq/gamelist.php
 
 ## [installing-lutris.md](/installing-lutris.md)
 
