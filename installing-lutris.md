@@ -7,51 +7,59 @@ This is a guide on how to install the Vulkan drivers and tools, and Lutris for m
 Table of contents
 =============
 - [**Requirements**](#requirements) **IMPORTANT!**
- - [Arch / Manjaro / Other Arch derivatives](#arch--manjaro--other-arch-derivatives)
+ - [Alpine](#alpine)
 	- [Prerequisites](#prerequisites)
-		- [Multilib (Manjaro excluded)](#multilib-manjaro-excluded)
+		- [Community repository](#community-repository)
 		- [AMD](#amd)
 		- [Intel](#intel)
 		- [Nvidia](#nvidia)
 	- [Installation](#installation)
- - [Fedora](#fedora)
-	- [Prerequisites](#prerequisites-1)
-		- [AMD / Intel](#amd--intel)
-		- [Nvidia](#nvidia-1)
-	- [Installation](#installation-1)
- - [Gentoo / Funtoo / Other Gentoo derivatives](#gentoo--funtoo--other-gentoo-derivatives)
-	- [Prerequisites](#prerequisites-2)
+ - [Arch / Manjaro / Other Arch derivatives](#arch--manjaro--other-arch-derivatives)
+	- [Prerequisites](#prerequisites)
+		- [Multilib repository (Manjaro excluded)](#multilib-repository-manjaro-excluded)
 		- [AMD](#amd-1)
 		- [Intel](#intel-1)
+		- [Nvidia](#nvidia-1)
+	- [Installation](#installation)
+ - [Fedora](#fedora)
+	- [Prerequisites](#prerequisites-2)
+		- [AMD / Intel](#amd--intel)
 		- [Nvidia](#nvidia-2)
 	- [Installation](#installation-2)
- - [NixOS](#nixos)
+ - [Gentoo / Funtoo / Other Gentoo derivatives](#gentoo--funtoo--other-gentoo-derivatives)
 	- [Prerequisites](#prerequisites-3)
-		- [AMD / Intel](#amd--intel-1)
-		- [Nvidia](#nvidia-3)
-	- [Installation](#installation-3)
- - [openSUSE](#opensuse)
-	- [Prerequisites](#prerequisites-4)
 		- [AMD](#amd-2)
 		- [Intel](#intel-2)
+		- [Nvidia](#nvidia-3)
+	- [Installation](#installation-3)
+ - [NixOS](#nixos)
+	- [Prerequisites](#prerequisites-4)
+		- [AMD / Intel](#amd--intel-1)
 		- [Nvidia](#nvidia-4)
 	- [Installation](#installation-4)
- - [Ubuntu / Linux Mint / Other Ubuntu-based distributions](#ubuntu--linux-mint--other-ubuntu-based-distributions)
+ - [openSUSE](#opensuse)
 	- [Prerequisites](#prerequisites-5)
-		- [AMD / Intel](#amd--intel-2)
-		- [Nvidia](#nvidia-5)
-	- [Installation](#installation-5)
- - [Void](#void)
-	- [Prerequisites](#prerequisites-6)
 		- [AMD](#amd-3)
 		- [Intel](#intel-3)
+		- [Nvidia](#nvidia-5)
+	- [Installation](#installation-5)
+ - [Ubuntu / Linux Mint / Other Ubuntu-based distributions](#ubuntu--linux-mint--other-ubuntu-based-distributions)
+	- [Prerequisites](#prerequisites-6)
+		- [AMD / Intel](#amd--intel-2)
 		- [Nvidia](#nvidia-6)
 	- [Installation](#installation-6)
+ - [Void](#void)
+	- [Prerequisites](#prerequisites-7)
+		- [AMD](#amd-4)
+		- [Intel](#intel-4)
+		- [Nvidia](#nvidia-7)
+	- [Installation](#installation-7)
  - [Others](#others)
 	- [Flatpak](#flatpak)
-		- [Prerequisites](#prerequisites-7)
+		- [Prerequisites](#prerequisites-8)
 			- [Flatpak](#flatpak-1)
-		- [Installation](#installation-7)
+		- [Installation](#installation-8)
+	- [Source](#source)
  - [External Sources](#external-sources)
 
 ## **Requirements**
@@ -60,11 +68,65 @@ Table of contents
 
 For more information about Vulkan, you can look at the [awesome-vulkan](https://github.com/vinjn/awesome-vulkan) project.
 
+
+## Alpine
+
+**||||--::CATEGORY_INCOMPLETE::--||||**
+
+### Prerequisites
+
+#### Community repository
+
+To enable the `Community repository`, you will have to refer to the [Alpine wiki](https://wiki.alpinelinux.org/wiki/Enable_Community_Repository).
+
+Then, choose your GPU's manufacturer:
+
+- [AMD](#amd)
+- [Intel](#intel)
+- [Nvidia](#nvidia)
+
+#### AMD
+
+To install support for the Vulkan API and its tools, execute the following command as root:
+
+```bash
+apk add mesa-vulkan-ati mesa-vulkan-layer vulkan-loader vulkan-headers
+```
+
+Then, proceed to the [installation](#installation).
+
+#### Intel
+
+To install support for the Vulkan API and its tools, execute the following command as root:
+
+```bash
+apk add mesa-vulkan-intel mesa-vulkan-layer vulkan-loader vulkan-headers
+```
+
+Then, proceed to the [installation](#installation).
+
+#### Nvidia
+
+**||||--::INSTRUCTIONS_NEEDED::--||||**
+
+To install support for the Vulkan API and its tools, execute the following command as root:
+
+```bash
+apk add mesa-vulkan-layer vulkan-loader vulkan-headers
+```
+
+Then, proceed to the [installation](#installation).
+
+### Installation
+
+Since Lutris is not packaged in Alpine yet, you will have to refer to the [source installation guide](#source).
+
+
 ## Arch / Manjaro / Other Arch derivatives
 
 ### Prerequisites
 
-#### Multilib (Manjaro excluded)
+#### Multilib repository (Manjaro excluded)
 
 To enable the `[multilib]` repository, you will have to refer to the [Arch wiki](https://wiki.archlinux.org/index.php/Official_repositories#Enabling_multilib). This process does to require for Manjaro users as it is already enabled by default.
 
@@ -76,9 +138,9 @@ pacman -Syu
 
 Then, choose your GPU's manufacturer:
 
-- [AMD](#amd)
-- [Intel](#intel)
-- [Nvidia](#nvidia)
+- [AMD](#amd-1)
+- [Intel](#intel-1)
+- [Nvidia](#nvidia-1)
 
 #### AMD
 
@@ -98,7 +160,7 @@ To install support for the Vulkan API and its tools, execute the following comma
 pacman -S lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
 ```
 
-Then, proceed to the [installation](#installation).
+Then, proceed to the [installation](#installation-1).
 
 #### Nvidia:
 
@@ -110,7 +172,7 @@ To install them, execute the following command as root:
 pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
 ```
 
-Then, proceed to the [installation](#installation).
+Then, proceed to the [installation](#installation-1).
 
 ### Installation
 
@@ -135,7 +197,7 @@ To install support for the Vulkan API and its tools, execute the following comma
 dnf install vulkan-tools mesa-vulkan-drivers vulkan-loader vulkan-validation-layers
 ```
 
-Then, proceed to the [installation](#installation-1).
+Then, proceed to the [installation](#installation-2).
 
 #### Nvidia
 
@@ -153,7 +215,7 @@ dnf install vulkan-tools mesa-vulkan-drivers vulkan-loader vulkan-validation-lay
 
 **(Optional): during this installation, `DNF` will ask if the GPG fingerprint is correct. You can check if it is correct in [RPM Fusion's page](https://rpmfusion.org/keys) to make sure that the fingerprint you check matches your version of Fedora.**
 
-Then, proceed to the [installation](#installation-1).
+Then, proceed to the [installation](#installation-2).
 
 ### Installation
 
@@ -178,7 +240,7 @@ Then, to install support for the Vulkan API and its tools, execute the following
 emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-layers media-libs/vulkan-loader
 ```
 
-Then proceed to the [installation](#installation-2).
+Then proceed to the [installation](#installation-3).
 
 #### Intel
 
@@ -190,7 +252,7 @@ Then, to install support for the Vulkan API and its tools, execute the following
 emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-layers media-libs/vulkan-loader
 ```
 
-Then proceed to the [installation](#installation-2).
+Then proceed to the [installation](#installation-3).
 
 #### Nvidia
 
@@ -202,7 +264,7 @@ Then, to install support for the Vulkan API and its tools, execute the following
 emerge --ask --verbose dev-util/vulkan-tools dev-util/vulkan-headers media-libs/vulkan-loader
 ```
 
-Then proceed to the [installation](#installation-2).
+Then proceed to the [installation](#installation-3).
 
 ### Installation
 
@@ -238,7 +300,7 @@ Then, execute the following command as root:
 nixos-rebuild switch
 ```
 
-Then proceed to the [installation](#installation-3).
+Then proceed to the [installation](#installation-4).
 
 #### Nvidia
 
@@ -263,7 +325,7 @@ At last, execute the following command as root:
 nixos-rebuild switch
 ```
 
-Then, proceed to the [installation](#installation-3).
+Then, proceed to the [installation](#installation-4).
 
 ### Installation
 
@@ -296,7 +358,7 @@ To install support for the Vulkan API and its tools, execute the following comma
 zypper install libvulkan_radeon libvulkan_radeon-32bit vulkan-tools vulkan-loader vulkan-headers vulkan-validationlayers
 ```
 
-Then, proceed to the [installation](#installation-4).
+Then, proceed to the [installation](#installation-5).
 
 #### Intel
 
@@ -306,7 +368,7 @@ To install support for the Vulkan API and its tools, execute the following comma
 zypper install libvulkan_intel libvulkan_intel-32bit vulkan-tools vulkan-loader vulkan-headers vulkan-validationlayers
 ```
 
-Then, proceed to the [installation](#installation-4).
+Then, proceed to the [installation](#installation-5).
 
 #### Nvidia
 
@@ -320,7 +382,7 @@ Then, to install support for the Vulkan API and its tools, execute the following
 zypper install vulkan-tools vulkan-loader vulkan-headers vulkan-validationlayers
 ```
 
-Then, proceed to the [installation](#installation-4).
+Then, proceed to the [installation](#installation-5).
 
 ### Installation
 
@@ -447,7 +509,7 @@ To install support for the Vulkan API and its tools, execute the following comma
 xbps-install -S mesa-vulkan-radeon Vulkan-Tools Vulkan-Headers Vulkan-ValidationLayers vulkan-loader
 ```
 
-Then, proceed to the [installation](#installation-6).
+Then, proceed to the [installation](#installation-7).
 
 #### Intel
 
@@ -459,7 +521,7 @@ Then, to install the Vulkan tools, execute the following commands as root:
 xbps-install -S Vulkan-Headers Vulkan-ValidationLayers
 ```
 
-Then, proceed to the [installation](#installation-6).
+Then, proceed to the [installation](#installation-7).
 
 #### Nvidia
 
@@ -471,7 +533,7 @@ Then, to install the Vulkan tools, execute the following commands as root:
 xbps-install -S Vulkan-Headers Vulkan-ValidationLayers
 ```
 
-Then, proceed to the [installation](#installation-6).
+Then, proceed to the [installation](#installation-7).
 
 ### Installation
 
