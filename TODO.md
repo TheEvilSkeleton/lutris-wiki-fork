@@ -33,6 +33,8 @@ This is a list of what we are planning on adding in the future. If something is 
 - ~~Add [Gentoo](https://www.gentoo.org/)~~
 - Add [Mageia](https://www.mageia.org/en/)
 - ~~Add [NixOS](https://nixos.org/)~~
+	- Retract NixOS
+	- Add [NixOS (example)](#nixos)
 - ~~Add [openSUSE](https://software.opensuse.org/)~~
 - Add [Slackware](http://www.slackware.com/)
 - Add [Solus](https://getsol.us/home/)
@@ -42,3 +44,72 @@ This is a list of what we are planning on adding in the future. If something is 
 	- ~~Add [Flatpak](https://flatpak.org/)~~
 	- Add [Tarball](https://lutris.net/releases/)
 	- Add [Source](https://github.com/lutris/lutris)
+
+### NixOS
+
+### Prerequisites
+
+#### AMD / Intel
+
+To install support for the Vulkan API and its tools, your `*.nix` (e.g. `configuration.nix`) must have the following as **system packages**:
+
+- `pkgs.vulkan-headers`;
+- `pkgs.vulkan-loader`;
+- `pkgs.vulkan-tools`;
+- `pkgs.vulkan-validation-layers`.
+
+Your `*.nix` file will look similar to this: 
+
+```nix
+environment.systemPackages = [ pkgs.vulkan-headers pkgs.vulkan-loader pkgs.vulkan-tools pkgs.vulkan-validation-layers ];
+```
+
+Then, execute the following command as root:
+
+```bash
+nixos-rebuild switch
+```
+
+Then proceed to the [installation](#installation-4).
+
+#### Nvidia
+
+To install support for the Vulkan API and its tools, you will have to install the **proprietary** drivers.
+
+To install them, you will have to refer to the [NixOS wiki](https://nixos.wiki/wiki/Nvidia).
+
+Then, your `*.nix` (e.g. `configuration.nix`) must have the following as **system packages**:
+
+- `pkgs.vulkan-headers`;
+- `pkgs.vulkan-loader`;
+- `pkgs.vulkan-tools`;
+- `pkgs.vulkan-validation-layers`.
+
+```nix
+environment.systemPackages = [ pkgs.vulkan-headers pkgs.vulkan-loader pkgs.vulkan-tools pkgs.vulkan-validation-layers ];
+```
+
+At last, execute the following command as root:
+
+```bash
+nixos-rebuild switch
+```
+
+Then, proceed to the [installation](#installation-4).
+
+### Installation
+
+To install Lutris, your `*.nix` (e.g. `configuration.nix`) must have Lutris (`pkgs.lutris-unwrapped`) as a **system package**
+
+Your `*.nix` file will look similar to this:
+
+```nix
+environment.systemPackages = [ pkgs.lutris-unwrapped ];
+```
+
+Then, execute the following command as root:
+
+```bash
+nixos-rebuild switch
+```
+
