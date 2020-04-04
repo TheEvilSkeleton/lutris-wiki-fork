@@ -6,6 +6,7 @@ This is a list of what we are planning on adding in the future. If something is 
 
 - Add [FeralInteractive / gamemode](https://github.com/FeralInteractive/gamemode)
 - Add [flightlessmango / MangoHud](https://github.com/flightlessmango/MangoHud)
+- Add [benjamimgois / GOverlay](https://github.com/benjamimgois/goverlay)
 - Add [DadSchoorse / vkBasalt](https://github.com/DadSchoorse/vkBasalt)
 - Add AMD GPU hacks
 	- [ACO compiler](https://wiki.archlinux.org/index.php/AMDGPU#ACO_compiler)
