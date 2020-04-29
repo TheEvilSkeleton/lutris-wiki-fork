@@ -15,3 +15,5 @@ Revamped wiki from Lutris to make it easier for newcomers to game on Linux, beca
 ## Chat
 
 To check our chat, press [here](https://github.com/lutris/guides/issues/3).
+
+[ok lol](https://github.com/lutris/docs/pull/6)
